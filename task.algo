@@ -1,0 +1,36 @@
+ALGORITHM recursion_checkpoint
+
+function IsPalindrome(word: string): Boolean;
+
+
+VAR
+     left, right: Integer;
+     
+BEGIN
+     left := 1;
+  right := Length(word);
+
+  while left < right do
+  begin
+    if word[left] <> word[right] then
+    begin
+      IsPalindrome := False;
+      Exit;
+    end;
+
+    Inc(left);
+    Dec(right);
+  end;
+
+  IsPalindrome := True;
+END
+
+VAR
+     word: string;
+     result: Boolean;
+
+BEGIN
+ word := 'radar';
+  result := IsPalindrome(word);
+  Write(result);
+END
